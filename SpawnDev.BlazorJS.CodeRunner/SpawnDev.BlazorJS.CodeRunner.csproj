@@ -1,0 +1,54 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+	
+	<PropertyGroup>
+		<TargetFrameworks>net8.0;net9.0</TargetFrameworks>
+		<Nullable>enable</Nullable>
+		<ImplicitUsings>enable</ImplicitUsings>
+		<Version>0.0.16</Version>
+		<GeneratePackageOnBuild>True</GeneratePackageOnBuild>
+		<GenerateDocumentationFile>true</GenerateDocumentationFile>
+		<EmbedAllSources>true</EmbedAllSources>
+		<DebugType>Embedded</DebugType>
+		<Title>SpawnDev.BlazorJS.CodeRunner</Title>
+		<Authors>LostBeard</Authors>
+		<Description>Compile C# code in Blazor WebAssembly</Description>
+		<PackageProjectUrl>https://github.com/LostBeard/SpawnDev.BlazorJS.CodeRunner</PackageProjectUrl>
+		<PackageReadmeFile>README.md</PackageReadmeFile>
+		<PackageLicenseFile>LICENSE.txt</PackageLicenseFile>
+		<PackageIcon>icon-128.png</PackageIcon>
+		<RepositoryUrl>https://github.com/LostBeard/SpawnDev.BlazorJS.CodeRunner.git</RepositoryUrl>
+		<RepositoryType>git</RepositoryType>
+		<PackageTags>Blazor;BlazorWebAssembly</PackageTags>
+		<CopyLocalLockFileAssemblies>true</CopyLocalLockFileAssemblies>
+		<RestoreProjectStyle>PackageReference</RestoreProjectStyle>
+	</PropertyGroup>
+
+	<ItemGroup>
+		<None Include="..\README.md" Pack="true" PackagePath="\" />
+		<None Include="..\LICENSE.txt" Pack="true" PackagePath="\" />
+		<None Include="icon-128.png" Pack="true" PackagePath="\" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<PackageReference Include="MetadataReferenceService.BlazorWasm" Version="0.0.1" />
+		<PackageReference Include="System.Runtime.Loader" Version="4.3.0" />
+		<PackageReference Include="Microsoft.CodeAnalysis.CSharp" Version="4.13.0-2.24555.1" />
+		<PackageReference Include="Microsoft.CodeAnalysis.CSharp.Features" Version="4.13.0-2.24555.1" />
+		<PackageReference Include="Microsoft.CodeAnalysis.Razor" Version="6.0.36" />
+		<PackageReference Include="Microsoft.DotNet.Arcade.Sdk" Version="9.0.0-beta.24372.7" PrivateAssets="all" IncludeAssets="none" GeneratePathProperty="true" />
+		<PackageReference Include="Microsoft.Net.Compilers.Razor.Toolset" Version="9.0.0-preview.24555.4" PrivateAssets="all" IncludeAssets="none" GeneratePathProperty="true" />
+	</ItemGroup>
+
+	<ItemGroup Condition=" '$(TargetFramework)' == 'net8.0' ">
+		<PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly" Version="8.0.1" />
+	</ItemGroup>
+
+	<ItemGroup Condition=" '$(TargetFramework)' == 'net9.0' ">
+		<PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly" Version="9.0.0" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<SupportedPlatform Include="browser" />
+	</ItemGroup>
+
+</Project>
