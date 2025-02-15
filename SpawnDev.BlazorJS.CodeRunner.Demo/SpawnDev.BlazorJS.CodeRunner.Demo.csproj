@@ -18,6 +18,8 @@
 	
 	<PropertyGroup>
 		<!-- 
+		    CodeRunner uses some Microsoft packages that they do not publish on the default Nuget source.
+			The package source they use is added here.
 			Add dotnet/aspnetcore dotnet-tools package source
 			This is requried to get Microsoft.CodeAnalysis.CSharp and others
 			https://github.com/dotnet/aspnetcore/blob/main/NuGet.config
@@ -27,12 +29,8 @@
 		</RestoreAdditionalProjectSources>
 	</PropertyGroup>
 
-	<ItemGroup Condition=" '$(Configuration)' == 'Debug' ">
+	<ItemGroup>
 		<ProjectReference Include="..\SpawnDev.BlazorJS.CodeRunner\SpawnDev.BlazorJS.CodeRunner.csproj" />
-	</ItemGroup>
-	
-	<ItemGroup Condition=" '$(Configuration)' == 'Release' ">
-		<PackageReference Include="SpawnDev.BlazorJS.CodeRunner" Version="*" />
 	</ItemGroup>
 
 </Project>
