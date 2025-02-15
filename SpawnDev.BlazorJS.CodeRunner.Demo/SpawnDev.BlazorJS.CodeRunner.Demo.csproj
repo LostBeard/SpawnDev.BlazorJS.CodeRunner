@@ -15,8 +15,12 @@
 		<PackageReference Include="BlazorMonaco" Version="3.3.0" />
 	</ItemGroup>
 
-	<ItemGroup>
+	<ItemGroup Condition=" '$(Configuration)' == 'Debug' ">
 		<ProjectReference Include="..\SpawnDev.BlazorJS.CodeRunner\SpawnDev.BlazorJS.CodeRunner.csproj" />
+	</ItemGroup>
+	
+	<ItemGroup Condition=" '$(Configuration)' == 'Release' ">
+		<PackageReference Include="SpawnDev.BlazorJS.CodeRunner" Version="*" />
 	</ItemGroup>
 
 </Project>
