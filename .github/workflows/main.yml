@@ -25,7 +25,7 @@ jobs:
 
     # publishes Blazor project to the publish-folder
     - name: Publish .NET Core Project
-      run: dotnet publish ./SpawnDev.BlazorJS.CodeRunner.Demo/ --nologo -c:Release --output publish
+      run: dotnet publish ./SpawnDev.BlazorJS.CodeRunner.Demo/SpawnDev.BlazorJS.CodeRunner.Demo.csproj --nologo -c:Release --output publish
 
     # changes the base-tag in index.html from '/' to '/SpawnDev.BlazorJS.CodeRunner/' to match GitHub Pages repository subdirectory
     - name: Change base-tag in index.html from / to /SpawnDev.BlazorJS.CodeRunner/
