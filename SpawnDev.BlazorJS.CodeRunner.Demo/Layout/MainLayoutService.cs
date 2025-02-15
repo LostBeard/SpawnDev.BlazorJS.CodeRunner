@@ -17,8 +17,8 @@ namespace SpawnDev.BlazorJS.CodeRunner.Demo.Layout
         }
         string _Title { get; set; } = "SpawnDev.BlazorJS.CodeRunner";
         public delegate void AfterRender(MainLayout mainLayout, bool firstRender);
-        public event AfterRender OnAfterRender;
-        public event Action OnTitleChanged;
+        public event AfterRender OnAfterRender = default!;
+        public event Action OnTitleChanged = default!;
         public void TriggerOnAfterRender(MainLayout mainLayout, bool firstRender)
         {
             OnAfterRender?.Invoke(mainLayout, firstRender);

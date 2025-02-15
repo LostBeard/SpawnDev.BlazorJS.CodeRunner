@@ -6,14 +6,14 @@ namespace SpawnDev.BlazorJS.CodeRunner.Demo.Pages
     public partial class Playground
     {
         [Inject]
-        BlazorJSRuntime JS { get; set; }
+        BlazorJSRuntime JS { get; set; } = default!;
 
         [Inject]
         CompilationService CompilationService { get; set; } = default!;
 
         Type? CompiledType = null;
 
-        StandaloneCodeEditor _Editor;
+        StandaloneCodeEditor? _Editor = null;
 
         string _textarea = @"@using System
 @using System.Threading.Tasks
@@ -94,7 +94,7 @@ namespace SpawnDev.BlazorJS.CodeRunner.Demo.Pages
             {
                 _busy = true;
                 StateHasChanged();
-                _textarea = await _Editor.GetValue();
+                _textarea = await _Editor!.GetValue();
                 CompiledType = await CompilationService.CompileRazorCodeToBlazorComponentType(_textarea, async msg =>
                 {
                     JS.Log($"Compiler: {msg}");

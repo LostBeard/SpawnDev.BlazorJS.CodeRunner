@@ -5,7 +5,7 @@ namespace SpawnDev.BlazorJS.CodeRunner.Demo.Layout.AppTray
     public partial class AppTrayArea : IDisposable
     {
         [Inject]
-        AppTrayService TrayIconService { get; set; }
+        AppTrayService TrayIconService { get; set; } = default!;
 
         protected override void OnInitialized()
         {

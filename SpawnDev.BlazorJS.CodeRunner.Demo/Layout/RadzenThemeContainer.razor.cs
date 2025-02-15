@@ -13,7 +13,7 @@ namespace SpawnDev.BlazorJS.CodeRunner.Demo.Layout
         /// Gets or sets the theme.
         /// </summary>
         [Parameter]
-        public string Theme { get; set; }
+        public string? Theme { get; set; }
 
         /// <summary>
         /// Enables WCAG contrast requirements. If set to true additional CSS file will be loaded.
@@ -21,7 +21,7 @@ namespace SpawnDev.BlazorJS.CodeRunner.Demo.Layout
         [Parameter]
         public bool Wcag { get; set; }
 
-        private string theme;
+        private string? theme = null;
 
         private bool wcag;
 
@@ -58,7 +58,7 @@ namespace SpawnDev.BlazorJS.CodeRunner.Demo.Layout
 
             ThemeService.SetTheme(theme, true);
 
-            theme = theme.ToLowerInvariant();
+            theme = theme?.ToLowerInvariant();
 
             ThemeService.ThemeChanged += OnThemeChanged;
 
@@ -67,9 +67,9 @@ namespace SpawnDev.BlazorJS.CodeRunner.Demo.Layout
             base.OnInitialized();
         }
 
-        private string GetCurrentTheme()
+        private string? GetCurrentTheme()
         {
-            if (PersistentComponentState.TryTakeFromJson(nameof(Theme), out string theme))
+            if (PersistentComponentState.TryTakeFromJson(nameof(Theme), out string? theme))
             {
                 return theme;
             }

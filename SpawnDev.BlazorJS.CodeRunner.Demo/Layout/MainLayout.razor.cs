@@ -7,19 +7,19 @@ namespace SpawnDev.BlazorJS.CodeRunner.Demo.Layout
     public partial class MainLayout
     {
         [Inject]
-        BlazorJSRuntime JS { get; set; }
+        BlazorJSRuntime JS { get; set; } = default!;
         [Inject]
-        NotificationService NotificationService { get; set; }
+        NotificationService NotificationService { get; set; } = default!;
         [Inject]
-        DialogService DialogService { get; set; }
+        DialogService DialogService { get; set; } = default!;
         [Inject]
-        AppTrayService TrayIconService { get; set; }
+        AppTrayService TrayIconService { get; set; } = default!;
         [Inject]
-        protected NavigationManager NavigationManager { get; set; }
+        protected NavigationManager NavigationManager { get; set; } = default!;
         [Inject]
-        MainLayoutService MainLayoutService { get; set; }
+        MainLayoutService MainLayoutService { get; set; } = default!;
         [Inject]
-        ThemeService ThemeService { get; set; }
+        ThemeService ThemeService { get; set; } = default!;
 
         string Title => MainLayoutService.Title;
         bool leftSidebarExpanded = false;
