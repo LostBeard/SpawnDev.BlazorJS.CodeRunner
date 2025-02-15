@@ -83,13 +83,11 @@ namespace SpawnDev.BlazorJS.CodeRunner.Demo.Pages
         }
 
         List<string> CompileLog = new List<string>();
-        bool _compileFailed = false;
         async Task CompileAndRun()
         {
             CompiledType = null;
             if (_busy) return;
             CompileLog.Clear();
-            _compileFailed = false;
             try
             {
                 _busy = true;
@@ -110,7 +108,6 @@ namespace SpawnDev.BlazorJS.CodeRunner.Demo.Pages
             }
             finally
             {
-                _compileFailed = CompiledType == null;
                 _busy = false;
             }
             StateHasChanged();

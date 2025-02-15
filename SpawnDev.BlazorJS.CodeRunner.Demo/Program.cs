@@ -23,6 +23,7 @@ builder.Services.AddScoped<AppTrayService>();
 builder.Services.AddScoped<MainLayoutService>();
 builder.Services.AddScoped<ThemeTrayIconService>();
 
+// Adds the CompilationService as a scoped service
 builder.Services.AddCompilerService();
 
 await builder.Build().BlazorJSRunAsync();
