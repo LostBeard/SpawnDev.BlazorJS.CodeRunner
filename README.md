@@ -20,7 +20,7 @@ Add `SpawnDev.BlazorJS.CodeRunner` package reference to your `Project.csproj`
 CodeRunner uses Microsoft.CodeAnalysis.CSharp. Microsoft now publishes that library on one of their Azure Nuget package hosts, referred to as `dotnet-tools`. That source has to be added to your project's `.csproj` file inside of a `<RestoreAdditionalProjectSources>` node.
 
 Add the package package source to your `Project.csproj`  
-https://github.com/dotnet/aspnetcore/blob/main/NuGet.config  
+Reference: https://github.com/dotnet/aspnetcore/blob/main/NuGet.config  
 ```xml
 <!-- CodeRunner dependency - package source for Microsoft.CodeAnalysis.CSharp -->
 <PropertyGroup>

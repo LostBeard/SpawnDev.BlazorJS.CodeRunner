@@ -4,7 +4,7 @@
 		<TargetFrameworks>net8.0;net9.0</TargetFrameworks>
 		<Nullable>enable</Nullable>
 		<ImplicitUsings>enable</ImplicitUsings>
-		<Version>0.0.17</Version>
+		<Version>1.0.0</Version>
 		<GeneratePackageOnBuild>True</GeneratePackageOnBuild>
 		<GenerateDocumentationFile>true</GenerateDocumentationFile>
 		<EmbedAllSources>true</EmbedAllSources>
@@ -27,7 +27,7 @@
 	<PropertyGroup>
 		<!-- 
 			Add dotnet/aspnetcore dotnet-tools package source
-			This is requried to get Microsoft.CodeAnalysis.CSharp and others
+			This is required to get Microsoft.CodeAnalysis.CSharp and others
 			https://github.com/dotnet/aspnetcore/blob/main/NuGet.config
 		-->
 		<RestoreAdditionalProjectSources>
@@ -44,8 +44,8 @@
 	<ItemGroup>
 		<PackageReference Include="MetadataReferenceService.BlazorWasm" Version="0.0.1" />
 		<PackageReference Include="System.Runtime.Loader" Version="4.3.0" />
-		<PackageReference Include="Microsoft.CodeAnalysis.CSharp" Version="4.13.0-2.24555.1" />
-		<PackageReference Include="Microsoft.CodeAnalysis.CSharp.Features" Version="4.13.0-2.24555.1" />
+		<PackageReference Include="Microsoft.CodeAnalysis.CSharp" Version="4.13.0" />
+		<PackageReference Include="Microsoft.CodeAnalysis.CSharp.Features" Version="4.13.0" />
 		<PackageReference Include="Microsoft.CodeAnalysis.Razor" Version="6.0.36" />
 	</ItemGroup>
 
