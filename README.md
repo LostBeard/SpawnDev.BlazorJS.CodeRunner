@@ -13,7 +13,7 @@ The demo also uses [BlazorMonaco](https://github.com/serdarciplak/BlazorMonaco).
 Add `SpawnDev.BlazorJS.CodeRunner` package reference to your `Project.csproj`
 ```xml
 <ItemGroup>
-	<PackageReference Include="SpawnDev.BlazorJS.CodeRunner" Version="0.0.17" />
+	<PackageReference Include="SpawnDev.BlazorJS.CodeRunner" Version="2.0.0-rc.9" />
 </ItemGroup>
 ```
 
